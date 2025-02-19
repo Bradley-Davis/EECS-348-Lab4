@@ -1,0 +1,20 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b9b9b9;
+    text-align: center;
+}
+
+h1 {
+    color: #000000;
+}
+table {
+    margin: auto; /* Centers the table horizontally */
+    border-collapse: collapse; /* Removes spacing between borders */
+    border: 1px solid black; /* Adds a border */
+}
+td {
+    padding: 20px; /* Adds spacing inside cells */
+}
+a:hover {
+    background: #0056b3;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This page is Awesome</title>
+</head>
+
+<body>
+<var>color</var>
+    <h1>This page is Awesome</h1>
+
+    <table>
+        <tr>
+    <td>
+        <p id="text">OMG this is a really cool <br>paragragraph. If you really think <br>about it paragraphs are essential <br>to HTML. This is awesome. Input <br>RGB values to change my color<br>
+        </p>
+    </td>
+    <td>
+        <input type="text" id="colorInput" placeholder="Enter a color (e.g., red, #ff0000)">
+    </td>
+
+    <script>
+        document.getElementById('colorInput').addEventListener('input', function() {
+            document.getElementById('text').style.color = this.value;
+        });
+    </script>
+
+</tr>
+</table>
+        
+
+    <a href="index.html">Back</a> <br><br>
+
+</body>
+
+</html>
