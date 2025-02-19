@@ -1,41 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-    <link rel="stylesheet" href="style.css">
-</head>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This page is Awesome</title>
+    <title>This Page is Awesome</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<var>color</var>
-    <h1>This page is Awesome</h1>
+
+    <h1>This Page is Awesome</h1>
 
     <table>
         <tr>
-    <td>
-        <p id="text">OMG this is a really cool <br>paragragraph. If you really think <br>about it paragraphs are essential <br>to HTML. This is awesome. Input <br>RGB values to change my color<br>
-        </p>
-    </td>
-    <td>
-        <input type="text" id="colorInput" placeholder="Enter a color (e.g., red, #ff0000)">
-    </td>
+            <td>
+                <p id="text" style="border: 2px solid black; padding: 10px;">
+                    OMG this is a really cool paragraph.<br>
+                    If you really think about it, paragraphs<br>
+                    are essential to HTML. This is awesome.<br>
+                    Input RGB values to change my color and border!
+                </p>
+            </td>
+            <td>
+                <h3>Text & Border Color</h3>
+                <label>R:</label> <input type="number" id="rValue" min="0" max="255" placeholder="0-255"><br>
+                <label>G:</label> <input type="number" id="gValue" min="0" max="255" placeholder="0-255"><br>
+                <label>B:</label> <input type="number" id="bValue" min="0" max="255" placeholder="0-255"><br>
+                
+                <h3>Border Width</h3>
+                <input type="number" id="borderWidth" min="0" max="20" placeholder="Border Width (px)"><br><br>
 
-    <script>
-        document.getElementById('colorInput').addEventListener('input', function() {
-            document.getElementById('text').style.color = this.value;
-        });
-    </script>
-
-</tr>
-</table>
-        
+                <button onclick="applyStyles()">Apply</button>
+            </td>
+        </tr>
+    </table>
 
     <a href="index.html">Back</a> <br><br>
 
-</body>
+    <script>
+        function applyStyles() {
+            let r = document.getElementById('rValue').value || 0;
+            let g = document.getElementById('gValue').value || 0;
+            let b = document.getElementById('bValue').value || 0;
+            let borderWidth = document.getElementById('borderWidth').value || 2;
 
+            let color = `rgb(${r}, ${g}, ${b})`;
+            let textElement = document.getElementById('text');
+
+            textElement.style.color = color;
+            textElement.style.borderColor = color;
+            textElement.style.borderWidth = borderWidth + "px";
+        }
+    </script>
+
+</body>
 </html>
